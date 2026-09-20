@@ -1,0 +1,22 @@
+services:
+  - type: web
+    name: campuskit-api
+    runtime: node
+    plan: starter
+    rootDir: .
+    buildCommand: corepack pnpm install --frozen-lockfile && corepack pnpm --filter @campuskit/server build
+    startCommand: corepack pnpm --filter @campuskit/server start
+    healthCheckPath: /health
+    disk:
+      name: campuskit-api-data
+      mountPath: /var/data
+      sizeGB: 1
+    envVars:
+      - key: NODE_VERSION
+        value: 22
+      - key: DATABASE_PATH
+        value: /var/data/campuskit.db
+      - key: JWT_SECRET
+        generateValue: true
+      - key: CORS_ORIGIN
+        sync: false

@@ -1,0 +1,23 @@
+.grid { display: grid; gap: var(--space-2); grid-template-columns: repeat(var(--slot-columns), minmax(0, 1fr)); }
+.cell { min-inline-size: var(--space-0); }
+.slot {
+  background: var(--color-surface);
+  border: var(--border-width) solid var(--color-border);
+  border-radius: var(--radius-md);
+  color: var(--color-text);
+  cursor: pointer;
+  font: inherit;
+  font-weight: var(--font-weight-bold);
+  inline-size: var(--size-full);
+  min-block-size: var(--touch-target);
+  padding: var(--space-2);
+}
+.slot:focus-visible { outline: var(--border-width) solid var(--color-primary); outline-offset: var(--space-1); }
+.available { border-color: var(--color-success); }
+.booked { background: var(--color-surface-muted); color: var(--color-text-muted); }
+.yours { background: var(--color-primary); border-color: var(--color-primary); color: var(--color-primary-contrast); }
+.unavailable { background: var(--color-surface-muted); color: var(--color-text-muted); }
+.selected { box-shadow: var(--elevation-2); }
+.slot:disabled { cursor: not-allowed; opacity: var(--state-disabled-opacity); }
+
+@media (max-width: 30rem) { .grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }

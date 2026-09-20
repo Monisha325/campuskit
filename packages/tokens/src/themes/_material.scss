@@ -1,0 +1,22 @@
+@use "sass:map";
+@use "../colors" as colors;
+@use "base";
+
+:root[data-theme="material"] {
+  @include base.variables;
+  --color-primary: #{map.get(colors.$color-primary, 500)};
+  --radius-sm: 0.5rem;
+  --radius-md: 1rem;
+  --radius-lg: 1.75rem;
+  --spacing-unit: 4px;
+  --elevation-1: 0 1px 2px rgba(0, 0, 0, 0.3), 0 1px 3px 1px rgba(0, 0, 0, 0.15);
+}
+
+:root[data-theme="material"][data-mode="dark"] {
+  color-scheme: dark;
+  --color-surface: #{map.get(colors.$color-neutral, 900)};
+  --color-surface-muted: #{map.get(colors.$color-neutral, 700)};
+  --color-text: #{map.get(colors.$color-neutral, 50)};
+  --color-text-muted: #{map.get(colors.$color-neutral, 300)};
+  --color-border: #{map.get(colors.$color-neutral, 500)};
+}

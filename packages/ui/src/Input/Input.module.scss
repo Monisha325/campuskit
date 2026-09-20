@@ -1,0 +1,17 @@
+.field { display: grid; gap: var(--space-2); }
+.label { color: var(--color-text); font-weight: var(--font-weight-bold); line-height: var(--line-height-normal); }
+.control {
+  background: var(--color-surface);
+  border: var(--border-width) solid var(--color-border);
+  border-radius: var(--radius-md);
+  color: var(--color-text);
+  font: inherit;
+  inline-size: var(--size-full);
+  min-height: var(--field-height);
+  padding: var(--space-2) var(--space-3);
+}
+.control:focus-visible { border-color: var(--color-primary); outline: var(--border-width) solid var(--color-primary); outline-offset: var(--space-1); }
+.invalid { border-color: var(--color-danger); }
+.description, .error { font-size: var(--font-size-sm); line-height: var(--line-height-normal); }
+.description { color: var(--color-text-muted); }
+.error { color: var(--color-danger); }

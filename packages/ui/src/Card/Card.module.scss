@@ -1,0 +1,12 @@
+.card {
+  background: var(--color-surface);
+  border: var(--border-width) solid var(--color-border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--elevation-1);
+  color: var(--color-text);
+  overflow: hidden;
+}
+
+.heading { font-size: var(--font-size-xl); line-height: var(--line-height-heading); margin: 0; padding: var(--space-4) var(--space-4) 0; }
+.body { padding: var(--space-4); }
+.footer { border-top: var(--border-width) solid var(--color-border); padding: var(--space-3) var(--space-4); }

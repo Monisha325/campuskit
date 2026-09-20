@@ -1,0 +1,16 @@
+@use "themes/bootstrap";
+@use "themes/material";
+
+:root {
+  color: var(--color-text);
+  background: var(--color-surface-muted);
+  font-family: var(--font-family);
+  font-size: var(--font-size-base);
+  line-height: var(--line-height-normal);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}

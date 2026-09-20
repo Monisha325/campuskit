@@ -1,0 +1,13 @@
+{
+  "name": "@campuskit/availability-widget",
+  "version": "0.1.0",
+  "private": true,
+  "files": ["dist"],
+  "scripts": {
+    "build": "esbuild ./src/availability-widget.js --bundle --format=iife --global-name=CampusKitAvailability --outfile=./dist/availability-widget.js",
+    "lint": "node --check src/availability-widget.js"
+  },
+  "devDependencies": {
+    "esbuild": "^0.25.12"
+  }
+}

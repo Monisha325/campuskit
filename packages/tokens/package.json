@@ -1,0 +1,18 @@
+{
+  "name": "@campuskit/tokens",
+  "version": "0.1.0",
+  "private": true,
+  "exports": {
+    "./styles.css": "./dist/index.css"
+  },
+  "files": ["dist"],
+  "scripts": {
+    "build": "sass --load-path=node_modules src/index.scss dist/index.css --no-source-map",
+    "dev": "sass --load-path=node_modules --watch src/index.scss:dist/index.css",
+    "lint": "sass --load-path=node_modules --no-source-map src/index.scss"
+  },
+  "devDependencies": {
+    "bootstrap": "^5.3.3",
+    "sass": "^1.83.4"
+  }
+}

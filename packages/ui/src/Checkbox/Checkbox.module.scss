@@ -1,0 +1,8 @@
+.field { display: grid; gap: var(--space-2); }
+.label { align-items: center; color: var(--color-text); cursor: pointer; display: flex; font-weight: var(--font-weight-bold); gap: var(--space-2); min-height: var(--field-height); }
+.control { accent-color: var(--color-primary); block-size: var(--space-4); inline-size: var(--space-4); margin: 0; }
+.control:focus-visible { outline: var(--border-width) solid var(--color-primary); outline-offset: var(--space-1); }
+.invalid { outline: var(--border-width) solid var(--color-danger); outline-offset: var(--space-1); }
+.description, .error { font-size: var(--font-size-sm); line-height: var(--line-height-normal); }
+.description { color: var(--color-text-muted); }
+.error { color: var(--color-danger); }
