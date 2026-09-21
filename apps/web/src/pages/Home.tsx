@@ -8,7 +8,7 @@ const FEATURED_SERVICES = [
     category: "Fabrication",
     location: "Innovation Lab A",
     description: "FDM printers for rapid prototyping, course projects, and maker competitions. PLA, PETG and TPU filaments available.",
-    icon: "🖨️",
+    image: "https://images.unsplash.com/photo-1631557997380-0a256d0d2105?w=800&q=80",
     slots: "9 AM – 3 PM",
     available: 3,
   },
@@ -18,7 +18,7 @@ const FEATURED_SERVICES = [
     category: "Fabrication",
     location: "Innovation Lab B",
     description: "Precision CO₂ laser cutters for acrylic, plywood, leather, and fabric. Approved materials provided on request.",
-    icon: "⚡",
+    image: "https://images.unsplash.com/photo-1502082553048-f009c37129b9?w=800&q=80",
     slots: "9 AM – 3 PM",
     available: 2,
   },
@@ -28,7 +28,7 @@ const FEATURED_SERVICES = [
     category: "Photography",
     location: "Media Studio",
     description: "Sony A7 IV full-frame mirrorless with 24–70 mm f/2.8 lens, tripod, and two LED panels. Perfect for portraits and projects.",
-    icon: "📷",
+    image: "https://images.unsplash.com/photo-1516035069371-29a1b244cc32?w=800&q=80",
     slots: "9 AM – 3 PM",
     available: 2,
   },
@@ -38,7 +38,7 @@ const FEATURED_SERVICES = [
     category: "Audio / Video",
     location: "Media Room 2",
     description: "Soundproofed recording booth with condenser microphones, audio interface, and Audacity pre-installed.",
-    icon: "🎙️",
+    image: "https://images.unsplash.com/photo-1590602847861-f357a9332bbc?w=800&q=80",
     slots: "9 AM – 3 PM",
     available: 1,
   },
@@ -48,19 +48,19 @@ const FEATURED_SERVICES = [
     category: "Electronics",
     location: "Electronics Lab C",
     description: "Temperature-controlled Hakko soldering stations with fume extractors, component trays, and basic electronic components.",
-    icon: "🔧",
+    image: "https://images.unsplash.com/photo-1582293041079-7914e0d9ad44?w=800&q=80",
     slots: "9 AM – 3 PM",
     available: 5,
   },
   {
     id: 6,
-    name: "VR Headsets",
-    category: "XR / Immersive",
-    location: "XR Hub",
-    description: "Meta Quest 3 headsets for design reviews, virtual field trips, and immersive project experiences.",
-    icon: "🥽",
+    name: "Video Production Kit",
+    category: "Audio / Video",
+    location: "Media Room 2",
+    description: "Sony ZV-E10 camera, Godox SL60 LED panel, collapsible green screen, and Rode VideoMic.",
+    image: "https://images.unsplash.com/photo-1527011045972-15c90171ef81?w=800&q=80",
     slots: "9 AM – 3 PM",
-    available: 4,
+    available: 3,
   },
 ];
 
@@ -161,7 +161,9 @@ export function Home() {
         <div className="public-card-grid home-services-grid">
           {FEATURED_SERVICES.map((item) => (
             <article className="service-card" key={item.id}>
-              <div className="service-card-icon" aria-hidden="true">{item.icon}</div>
+              <div className="service-card-image">
+                <img src={item.image} alt={item.name} loading="lazy" />
+              </div>
               <div className="service-card-body">
                 <div className="service-card-meta">
                   <span className="service-badge">{item.category}</span>
@@ -175,17 +177,17 @@ export function Home() {
                 <p className="service-location">
                   <span aria-hidden="true">⌖</span> {item.location} &nbsp;·&nbsp; {item.slots}
                 </p>
-              </div>
-              <div className="service-card-footer">
-                {user ? (
-                  <Link className="text-link" to="/browse">
-                    Book now <span aria-hidden="true">→</span>
-                  </Link>
-                ) : (
-                  <Link className="text-link" to="/register">
-                    Sign up to book <span aria-hidden="true">→</span>
-                  </Link>
-                )}
+                <div className="service-card-footer">
+                  {user ? (
+                    <Link className="btn-pill" to="/browse">
+                      Book now
+                    </Link>
+                  ) : (
+                    <Link className="btn-pill" to="/register">
+                      Read More
+                    </Link>
+                  )}
+                </div>
               </div>
             </article>
           ))}
