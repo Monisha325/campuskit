@@ -5,6 +5,7 @@ import { AdminQueue } from "./pages/AdminQueue";
 import { Browse } from "./pages/Browse";
 import { EquipmentDetail } from "./pages/EquipmentDetail";
 import { Login } from "./pages/Login";
+import { Register } from "./pages/Register";
 import { MyBookings } from "./pages/MyBookings";
 
 function ProtectedRoute() { return useAuth().user ? <Outlet /> : <Navigate replace to="/login" />; }
@@ -13,6 +14,7 @@ function AdminRoute() { return useAuth().user?.role === "admin" ? <Outlet /> : <
 export function AppRoutes() {
   return <Routes>
     <Route element={<Login />} path="/login" />
+    <Route element={<Register />} path="/register" />
     <Route element={<ProtectedRoute />}>
       <Route element={<AppShell />}>
         <Route element={<Browse />} path="/browse" />

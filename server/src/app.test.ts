@@ -42,3 +42,16 @@ test("demo student can log in", async () => {
   assert.ok(result.token);
   assert.equal(result.user.role, "student");
 });
+
+test("a new student can create an account", async () => {
+  const response = await fetch(`${baseUrl}/auth/register`, {
+    body: JSON.stringify({ name: "Taylor Student", email: "taylor@test.edu", password: "A-secure-password" }),
+    headers: { "Content-Type": "application/json" },
+    method: "POST"
+  });
+  const result = await response.json() as { token: string; user: { email: string; role: string } };
+  assert.equal(response.status, 201);
+  assert.ok(result.token);
+  assert.equal(result.user.email, "taylor@test.edu");
+  assert.equal(result.user.role, "student");
+});

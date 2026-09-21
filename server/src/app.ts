@@ -13,7 +13,7 @@ app.get("/", (_request, response) => response.json({
   name: "CampusKit API",
   health: "/health",
   routes: {
-    login: "POST /auth/login",
+    auth: "POST /auth/login, POST /auth/register",
     equipment: "GET /equipment, GET /equipment/:id",
     bookings: "GET /bookings/mine, POST /bookings",
     admin: "GET /bookings, PATCH /bookings/:id"

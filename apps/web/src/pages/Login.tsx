@@ -1,7 +1,7 @@
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useMutation } from "@tanstack/react-query";
 import { useForm } from "react-hook-form";
-import { Navigate, useNavigate } from "react-router-dom";
+import { Link, Navigate, useNavigate } from "react-router-dom";
 import { z } from "zod";
 import { Button, Card, Input } from "@campuskit/ui";
 import { apiFetch } from "../api/client";
@@ -27,5 +27,6 @@ export function Login() {
       {login.error && <p className="form-error" role="alert">{login.error.message}</p>}
       <Button loading={login.isPending} loadingLabel="Signing in" type="submit">Sign in</Button>
     </form>
+    <p className="auth-switch">New to CampusKit? <Link to="/register">Create an account</Link></p>
   </Card></main>;
 }

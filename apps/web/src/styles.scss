@@ -65,6 +65,8 @@ p { line-height: var(--line-height-normal); }
 .page-heading > :last-child { inline-size: 16rem; }
 .login-page { margin: auto; max-inline-size: var(--modal-max-width); padding: clamp(3rem, 12vh, 8rem) var(--space-4); }
 .login-form { display: grid; gap: var(--space-4); }
+.auth-switch { color: var(--color-text-muted); font-size: var(--font-size-sm); margin: var(--space-4) 0 0; text-align: center; }
+.auth-switch a { font-weight: var(--font-weight-bold); }
 .detail-layout { display: grid; gap: var(--space-6); grid-template-columns: 1fr 1fr; margin-top: var(--space-4); }
 .booking-panel { display: grid; gap: var(--space-4); }
 .modal-actions, .table-actions { display: flex; flex-wrap: wrap; gap: var(--space-3); }
