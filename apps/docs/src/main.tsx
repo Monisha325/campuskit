@@ -5,7 +5,7 @@ import { Badge, Card } from "@campuskit/ui";
 import "./styles.scss";
 
 function CampusKitService() {
-  const bookingPortalUrl = import.meta.env.VITE_BOOKING_PORTAL_URL;
+  const bookingPortalUrl = import.meta.env.VITE_BOOKING_PORTAL_URL?.replace(/\/$/, "");
   useEffect(() => {
     document.documentElement.dataset.theme = "bootstrap";
     document.documentElement.dataset.mode = "light";
@@ -15,7 +15,7 @@ function CampusKitService() {
     <main>
       <header className="service-header">
         <a className="service-brand" href="#top"><span aria-hidden="true">C</span>CampusKit</a>
-        <nav aria-label="Service navigation"><a href="#services">Services</a><a href="#how-to-book">How to book</a><a href="#visit">Visit us</a>{bookingPortalUrl && <a className="header-cta" href={bookingPortalUrl}>Book now</a>}</nav>
+        <nav aria-label="Service navigation"><a href="#services">Services</a><a href="#how-to-book">How to book</a><a href="#visit">Visit us</a>{bookingPortalUrl && <span className="auth-links"><a href={`${bookingPortalUrl}/login`}>Sign in</a><a className="header-cta" href={`${bookingPortalUrl}/register`}>Create account</a></span>}</nav>
       </header>
 
       <section className="service-hero" id="top">

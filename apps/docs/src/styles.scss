@@ -6,6 +6,7 @@ button { font: inherit; }
 .service-brand { align-items: center; color: var(--color-text); display: inline-flex; font-size: var(--font-size-lg); font-weight: var(--font-weight-bold); gap: var(--space-2); text-decoration: none; }
 .service-brand span { align-items: center; background: linear-gradient(135deg, var(--color-primary), #7c3aed); border-radius: .7rem; color: var(--color-primary-contrast); display: inline-flex; height: 2rem; justify-content: center; width: 2rem; }
 .service-header nav { display: flex; gap: var(--space-4); }
+.auth-links { align-items: center; display: inline-flex; gap: var(--space-3); }
 .service-header nav a { color: var(--color-text-muted); font-size: var(--font-size-sm); font-weight: var(--font-weight-bold); text-decoration: none; }
 .service-header nav a:hover { color: var(--color-primary); }
 .service-header nav .header-cta { background: var(--color-primary); border-radius: var(--radius-full); color: var(--color-primary-contrast); padding: .45rem .75rem; }
