@@ -28,7 +28,7 @@ a { color: var(--color-primary); }
 .public-card-grid p { color: var(--color-text-muted); margin: 0; }
 .process-section { border-top: var(--border-width) solid var(--color-border); }
 .process-section > .eyebrow { margin-bottom: var(--space-2); }
-.process-section ol { display: grid; gap: var(--space-5); list-style: none; margin: var(--space-6) 0 0; padding: 0; }
+.process-section ol { display: grid; gap: 1.5rem; list-style: none; margin: 3rem 0 0; padding: 0; }
 .process-section li { align-items: center; background: linear-gradient(145deg, #ffffff, var(--color-surface-muted)); border: 1px solid rgba(0,0,0,0.04); border-radius: 1.5rem; box-shadow: 0 6px 16px rgba(0,0,0,0.03); display: grid; gap: var(--space-5); grid-template-columns: 4rem 1fr; padding: 1.5rem 2rem; transition: transform 0.2s ease, box-shadow 0.2s ease; position: relative; overflow: hidden; }
 .process-section li:hover { transform: translateY(-0.15rem); box-shadow: 0 12px 28px rgba(124, 58, 237, 0.08); border-color: rgba(124, 58, 237, 0.15); }
 .process-section li > span { align-items: center; background: linear-gradient(135deg, var(--color-primary), #7c3aed); box-shadow: 0 6px 14px rgba(124, 58, 237, 0.35); border-radius: 50%; color: #ffffff; display: inline-flex; font-size: 1.15rem; font-weight: 800; height: 3.5rem; justify-content: center; width: 3.5rem; letter-spacing: 0.05em; text-shadow: 0 1px 2px rgba(0,0,0,0.15); }
@@ -110,7 +110,7 @@ p { line-height: var(--line-height-normal); }
 .modal-actions, .table-actions { display: flex; flex-wrap: wrap; gap: var(--space-3); }
 
 /* ── Home page: service cards ────────────────────────────────── */
-.home-services-grid { grid-template-columns: repeat(3, 1fr); }
+.home-services-grid { grid-template-columns: repeat(3, 1fr); gap: 2rem; }
 .service-card { background: var(--color-surface); border: 1px solid rgba(0,0,0,0.06); border-radius: 1.5rem; box-shadow: 0 8px 24px rgba(0,0,0,0.03); display: flex; flex-direction: column; overflow: hidden; transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1); cursor: default; }
 .service-card:hover { box-shadow: 0 20px 40px rgba(124, 58, 237, 0.12); transform: translateY(-0.4rem); border-color: rgba(124, 58, 237, 0.2); }
 .service-card-icon { background: linear-gradient(135deg, rgba(79, 70, 229, 0.08) 0%, rgba(124, 58, 237, 0.15) 100%); border-bottom: 1px solid rgba(0,0,0,0.04); font-size: 2.75rem; padding: 2.25rem var(--space-5); display: flex; align-items: center; justify-content: center; transition: transform 0.3s ease; }
