@@ -27,7 +27,7 @@ export function Register() {
   });
 
   if (user) return <Navigate replace to="/browse" />;
-  return <main className="login-page"><Card heading="Create your CampusKit account"><p className="muted">Register once to request equipment and manage your bookings.</p>
+  return <main className="login-page"><section className="auth-layout"><div className="auth-intro"><div className="auth-brand"><span aria-hidden="true">C</span>CampusKit</div><p className="eyebrow">Equipment booking portal</p><h1>Create your account.</h1><p>Register once to browse campus resources, request a time slot, and keep track of every booking.</p></div><Card className="auth-card" heading="Create account"><p className="muted">Your account is ready to use as soon as registration is complete.</p>
     <form className="login-form" onSubmit={handleSubmit((values) => registration.mutate(values))}>
       <Input autoComplete="name" error={errors.name?.message} label="Full name" {...register("name")} />
       <Input autoComplete="email" error={errors.email?.message} label="Email" type="email" {...register("email")} />
@@ -37,5 +37,5 @@ export function Register() {
       <Button loading={registration.isPending} loadingLabel="Creating account" type="submit">Create account</Button>
     </form>
     <p className="auth-switch">Already have an account? <Link to="/login">Sign in</Link></p>
-  </Card></main>;
+  </Card></section></main>;
 }

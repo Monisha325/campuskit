@@ -92,7 +92,14 @@ p { line-height: var(--line-height-normal); }
 
 .page-heading { align-items: end; display: flex; gap: var(--space-4); justify-content: space-between; margin-bottom: var(--space-6); }
 .page-heading > :last-child { inline-size: 16rem; }
-.login-page { margin: auto; max-inline-size: var(--modal-max-width); padding: clamp(3rem, 12vh, 8rem) var(--space-4); }
+.login-page { align-items: center; background: radial-gradient(circle at 14% 12%, var(--color-primary-50), transparent 31rem), var(--color-surface-muted); display: grid; min-block-size: 100vh; padding: var(--space-6); }
+.auth-layout { align-items: center; display: grid; gap: clamp(2rem, 8vw, 7rem); grid-template-columns: minmax(0, 1fr) minmax(21rem, 30rem); margin: auto; max-inline-size: 70rem; width: 100%; }
+.auth-intro { max-inline-size: 37rem; }
+.auth-intro h1 { font-size: clamp(2.8rem, 6vw, 5rem); }
+.auth-intro > p:last-child { color: var(--color-text-muted); font-size: var(--font-size-lg); margin: var(--space-4) 0 0; }
+.auth-brand { align-items: center; color: var(--color-text); display: inline-flex; font-size: var(--font-size-xl); font-weight: var(--font-weight-bold); gap: var(--space-2); margin-bottom: clamp(3rem, 10vh, 7rem); }
+.auth-brand span { align-items: center; background: linear-gradient(135deg, var(--color-primary), #7c3aed); border-radius: .75rem; box-shadow: 0 .5rem 1.25rem rgb(79 70 229 / 26%); color: var(--color-primary-contrast); display: inline-flex; height: 2.5rem; justify-content: center; width: 2.5rem; }
+.auth-card { box-shadow: var(--elevation-2); }
 .login-form { display: grid; gap: var(--space-4); }
 .auth-switch { color: var(--color-text-muted); font-size: var(--font-size-sm); margin: var(--space-4) 0 0; text-align: center; }
 .auth-switch a { font-weight: var(--font-weight-bold); }
@@ -100,5 +107,5 @@ p { line-height: var(--line-height-normal); }
 .booking-panel { display: grid; gap: var(--space-4); }
 .modal-actions, .table-actions { display: flex; flex-wrap: wrap; gap: var(--space-3); }
 
-@media (max-width: 48rem) { .site-header, .public-header { gap: var(--space-3); padding-inline: var(--space-4); } .site-nav { margin-inline: 0; order: 3; overflow-x: auto; width: 100%; } .account-name { display: none; } .site-header { flex-wrap: wrap; } .public-header nav { display: none; } .public-hero { grid-template-columns: 1fr; min-block-size: auto; padding-block: 3rem; } .public-card-grid { grid-template-columns: 1fr; } .browse-hero { grid-template-columns: 1fr; } .hero-stats { max-inline-size: 28rem; } .equipment-toolbar, .equipment-grid, .detail-layout { grid-template-columns: 1fr; } .page-heading { align-items: stretch; flex-direction: column; } .page-heading > :last-child { inline-size: var(--size-full); } }
+@media (max-width: 48rem) { .site-header, .public-header { gap: var(--space-3); padding-inline: var(--space-4); } .site-nav { margin-inline: 0; order: 3; overflow-x: auto; width: 100%; } .account-name { display: none; } .site-header { flex-wrap: wrap; } .public-header nav { display: none; } .public-hero { grid-template-columns: 1fr; min-block-size: auto; padding-block: 3rem; } .public-card-grid { grid-template-columns: 1fr; } .auth-layout { gap: var(--space-8); grid-template-columns: 1fr; max-inline-size: var(--modal-max-width); } .auth-brand { margin-bottom: var(--space-8); } .browse-hero { grid-template-columns: 1fr; } .hero-stats { max-inline-size: 28rem; } .equipment-toolbar, .equipment-grid, .detail-layout { grid-template-columns: 1fr; } .page-heading { align-items: stretch; flex-direction: column; } .page-heading > :last-child { inline-size: var(--size-full); } }
 @media (max-width: 32rem) { .page-content, .public-hero, .public-section { padding-inline: var(--space-4); } .brand-copy small { display: none; } .site-header, .public-header { padding-inline: var(--space-3); } .public-actions { gap: var(--space-2); } .public-actions .sign-in-link { display: none; } .hero-actions { align-items: start; flex-direction: column; } .hero-stats { gap: var(--space-2); } .hero-stats div { padding: var(--space-2); } .browse-hero { padding: var(--space-6) var(--space-4); } h1 { font-size: 2.35rem; } .results-summary { align-items: start; gap: var(--space-2); } }

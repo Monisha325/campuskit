@@ -20,7 +20,7 @@ export function Login() {
     onSuccess: ({ token, user: nextUser }) => { setSession(token, nextUser); navigate("/browse"); }
   });
   if (user) return <Navigate replace to="/browse" />;
-  return <main className="login-page"><Card heading="Sign in to CampusKit"><p className="muted">Use the seeded student account or sign in as the demo administrator.</p>
+  return <main className="login-page"><section className="auth-layout"><div className="auth-intro"><div className="auth-brand"><span aria-hidden="true">C</span>CampusKit</div><p className="eyebrow">Equipment booking portal</p><h1>Welcome back.</h1><p>Sign in to view available campus equipment and manage your booking requests.</p></div><Card className="auth-card" heading="Sign in"><p className="muted">Enter your account details to continue.</p>
     <form className="login-form" onSubmit={handleSubmit((values) => login.mutate(values))}>
       <Input autoComplete="email" error={errors.email?.message} label="Email" type="email" {...register("email")} />
       <Input autoComplete="current-password" error={errors.password?.message} label="Password" type="password" {...register("password")} />
@@ -28,5 +28,5 @@ export function Login() {
       <Button loading={login.isPending} loadingLabel="Signing in" type="submit">Sign in</Button>
     </form>
     <p className="auth-switch">New to CampusKit? <Link to="/register">Create an account</Link></p>
-  </Card></main>;
+  </Card></section></main>;
 }
